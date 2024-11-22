@@ -1,15 +1,15 @@
-package com.chillrate.auth.login.domain
+package com.chillrate.auth.register.domain
 
-import com.chillrate.auth.register.domain.models.LoginAction
-import com.chillrate.auth.register.domain.models.LoginEvent
-import com.chillrate.auth.register.domain.models.LoginState
+import com.chillrate.auth.register.domain.models.RegisterAction
+import com.chillrate.auth.register.domain.models.RegisterEvent
+import com.chillrate.auth.register.domain.models.RegisterState
 import com.chillrate.foundation.core.UIController
 
-class RegisterController : UIController<LoginState, LoginAction, LoginEvent>(
-    LoginState()
+class RegisterController : UIController<RegisterState, RegisterAction, RegisterEvent>(
+    RegisterState()
 ) {
-    override fun obtainEvent(viewEvent: LoginEvent) = when (viewEvent) {
-        LoginEvent.Init -> {}
+    override fun obtainEvent(viewEvent: RegisterEvent) = when (viewEvent) {
+        RegisterEvent.Init -> {}
         else -> {}
     }
 }
