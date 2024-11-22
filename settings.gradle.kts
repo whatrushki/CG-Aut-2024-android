@@ -16,9 +16,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { setUrl("https://jitpack.io") }
     }
 }
 
 rootProject.name = "ChillRate"
 include(":app")
- 
+include(":core:foundation")
+include(":core:ui")
+include(":core:navigation")
+include(":core:remote")
+include(":features:main")
+include(":features:splash")
+include(":features:auth")

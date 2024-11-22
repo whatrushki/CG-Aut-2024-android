@@ -1,0 +1,6 @@
+package com.chillrate
+
+import android.app.Application
+
+class ChillRateApp : Application() {
+}
