@@ -4,6 +4,9 @@ import android.app.Application
 import com.chillrate.auth.login.di.loginModule
 import com.chillrate.auth.register.di.registerModule
 import com.chillrate.di.appModule
+import com.chillrate.main.children.live.di.liveModule
+import com.chillrate.main.children.profile.di.profileModule
+import com.chillrate.main.children.room.di.roomModule
 import com.chillrate.main.di.mainModule
 import com.chillrate.remote.callibri.di.callibriModule
 import com.chillrate.splash.di.splashModule
@@ -26,6 +29,9 @@ class ChillRateApp : Application() {
                     loginModule,
                     registerModule,
                     splashModule,
+                    liveModule,
+                    profileModule,
+                    roomModule,
 
                     // Callibri
                     callibriModule
