@@ -49,6 +49,7 @@ dependencies {
     implementation(project(":features:main"))
     implementation(project(":features:auth"))
     implementation(project(":features:splash"))
+    implementation ("io.github.ehsannarmani:compose-charts:0.0.18")
 
     implementation(libs.bundles.koin)
     implementation(libs.bundles.ktor)
@@ -64,6 +65,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.material)
+    implementation(libs.material)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
