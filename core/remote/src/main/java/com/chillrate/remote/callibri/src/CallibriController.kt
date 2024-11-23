@@ -19,6 +19,7 @@ import com.neurosdk2.neuro.types.SensorParameter
 import com.neurosdk2.neuro.types.SensorSamplingFrequency
 import com.neurosdk2.neuro.types.SensorState
 import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.runBlocking
 import kotlin.concurrent.thread
@@ -46,7 +47,12 @@ class CallibriController {
         }
     }
 
+    val sensorConnected = MutableStateFlow(false)
     private var sensor: Callibri? = null
+        set(value) {
+            sensorConnected.value = sensor != null
+            field = value
+        }
 
     var connectionStateChanged: (SensorState) -> Unit = { }
     var batteryChanged: (Int) -> Unit = { }
