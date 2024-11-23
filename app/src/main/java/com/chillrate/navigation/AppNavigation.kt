@@ -6,11 +6,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.chillrate.auth.login.navigation.loginRegistry
 import com.chillrate.auth.register.navigation.registerRegistry
+import com.chillrate.main.navigation.MainProvider
 import com.chillrate.main.navigation.mainRegistry
 import com.chillrate.navigation.core.NavigationHost
 import com.chillrate.navigation.core.Navigator
 import com.chillrate.navigation.core.rememberHostNavigator
-import com.chillrate.splash.navigation.SplashProvider
 import com.chillrate.splash.navigation.splashRegistry
 import com.chillrate.ui.theme.SHUITheme.palettes
 
@@ -19,7 +19,7 @@ import com.chillrate.ui.theme.SHUITheme.palettes
 fun AppNavHost(
     navigator: Navigator = rememberHostNavigator()
 ) = NavigationHost(
-    start = SplashProvider,
+    start = MainProvider,//SplashProvider,
     navigator = navigator,
     modifier = Modifier
         .fillMaxSize()

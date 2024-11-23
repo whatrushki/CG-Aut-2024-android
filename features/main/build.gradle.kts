@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:remote"))
 
+    implementation(libs.brainllc.neurosdk)
     implementation(libs.bundles.koin)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
