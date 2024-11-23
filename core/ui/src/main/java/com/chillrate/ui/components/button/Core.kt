@@ -13,7 +13,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.chillrate.ui.theme.SHUITheme.palettes
 import com.chillrate.ui.theme.SHUITheme.shapes
-import com.chillrate.ui.utils.animatedClickable
 import com.chillrate.ui.utils.applyComposableIf
 import com.chillrate.ui.utils.applyIf
 
@@ -68,7 +67,6 @@ fun Button(
     modifier = Modifier
         .clip(shapes)
         .background(mode.background)
-        .animatedClickable(enabled = enabled, onClick = onClick)
         .applyIf(fill) { fillMaxWidth() }
         .applyComposableIf(
             mode == ButtonMode.Outline || mode == ButtonMode.Icon,

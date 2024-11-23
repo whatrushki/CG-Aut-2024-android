@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
-import app.whatrsuhik.ui.theme.SHUITheme.palettes
 import com.chillrate.navigation.core.NavProvider
+import com.chillrate.ui.theme.SHUITheme.palettes
 
 abstract class NavItem(
     val name: String,
