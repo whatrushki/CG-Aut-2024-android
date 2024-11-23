@@ -1,12 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "com.chillrate.remote"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -31,12 +30,27 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
+    packaging {
+        jniLibs.pickFirsts.apply {
+            add("lib/x86/libc++_shared.so")
+            add("lib/x86_64/libc++_shared.so")
+            add("lib/armeabi-v7a/libc++_shared.so")
+            add("lib/arm64-v8a/libc++_shared.so")
+
+            add("lib/x86/libfilters.so")
+            add("lib/x86_64/libfilters.so")
+            add("lib/armeabi-v7a/libfilters.so")
+            add("lib/arm64-v8a/libfilters.so")
+        }
     }
 }
 
 dependencies {
+    implementation("com.github.BrainbitLLC:neurosdk2:1.0.6.17")
+    implementation("com.github.BrainbitLLC:CallibriECG:1.0.0")
+
+    implementation(libs.bundles.ktor)
+    implementation(libs.koin.core)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

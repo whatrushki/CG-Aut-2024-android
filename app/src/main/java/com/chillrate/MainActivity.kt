@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.chillrate.navigation.AppNavHost
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import com.chillrate.splash.navigation.SplashProvider
+import com.chillrate.splash.presentation.SplashFeature
 import com.chillrate.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +15,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AppTheme { AppNavHost() }
+            AppTheme {
+//                AppNavHost()
+                val splash = remember { SplashFeature(SplashProvider) }
+                splash.content(Modifier)
+            }
         }
     }
 }
