@@ -1,3 +1,6 @@
 package com.chillrate.auth.login.domain.models
 
-class LoginState
+data class LoginState(
+    val password : String = "",
+    val login : String = ""
+)
