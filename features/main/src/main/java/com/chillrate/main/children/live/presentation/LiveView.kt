@@ -22,7 +22,7 @@ fun RoomView(
     val sheetProvider = LocalSheetProvider.current
 
     val sensorConnected by callibriRepository.controller.sensorConnected.collectAsState()
-
+    val data by callibriRepository.data.collectAsState()
     sheetProvider.setContent(SensorConnect)
 
     LaunchedEffect(sensorConnected) {
