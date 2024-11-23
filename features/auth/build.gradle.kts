@@ -42,6 +42,7 @@ dependencies {
     implementation(project(":core:foundation"))
     implementation(project(":core:ui"))
     implementation(project(":core:remote"))
+    implementation(project(":features:main"))
 
     implementation(libs.bundles.koin)
     implementation(libs.androidx.navigation.compose)
