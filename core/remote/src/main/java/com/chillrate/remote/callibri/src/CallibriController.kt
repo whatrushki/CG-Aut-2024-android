@@ -77,15 +77,16 @@ class CallibriController {
                         ex.printStackTrace()
                     }
 
+                    sensorConnected.value = true
                     connectionStateChanged(SensorState.StateInRange)
                     onConnectionResult(SensorState.StateInRange)
                 } else {
+                    sensorConnected.value = false
                     onConnectionResult(SensorState.StateOutOfRange)
                 }
             } catch (ex: Exception) {
                 ex.printStackTrace()
             }
-
         }
     }
 
@@ -104,8 +105,10 @@ class CallibriController {
 
     fun disconnectCurrent() {
         try {
-            if (sensor?.state == SensorState.StateInRange)
+            if (sensor?.state == SensorState.StateInRange) {
                 sensor?.disconnect()
+                sensorConnected.value = false
+            }
         } catch (ex: Exception) {
             ex.printStackTrace()
         }

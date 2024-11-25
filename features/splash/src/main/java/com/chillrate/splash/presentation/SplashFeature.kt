@@ -18,7 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import app.whatrushik.what_shadcn_ui.core.react.useState
 import com.chillrate.foundation.core.Feature
-import com.chillrate.foundation.utils.PermissionRequired
+import com.chillrate.ui.components.widget.PermissionRequired
 import com.chillrate.navigation.core.NavComponent
 import com.chillrate.remote.callibri.src.CallibriController
 import com.chillrate.splash.domain.SplashController

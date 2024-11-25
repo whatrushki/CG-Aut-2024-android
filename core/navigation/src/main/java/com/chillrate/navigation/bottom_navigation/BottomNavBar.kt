@@ -21,12 +21,12 @@ fun BottomNavBar(
     navigator: Navigator = rememberNavigator(),
     screens: Iterable<NavItem>
 ) = NavigationBar(
+    containerColor = palettes.card,
     modifier = Modifier
         .shadow(
             10.dp,
             RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp),
-        ),
-    containerColor = palettes.background
+        )
 ) {
     var currentDestination by remember { mutableStateOf(navigator.c.currentDestination) }
 

@@ -1,4 +1,4 @@
-package com.chillrate.foundation.services
+package com.chillrate.ui.components.widget
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
@@ -7,7 +7,6 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -20,7 +19,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import com.chillrate.ui.theme.SHUITheme.palettes
 import kotlinx.coroutines.launch
 
 
@@ -75,7 +74,8 @@ fun ProvideGlobalSheet(
 
         if (open) ModalBottomSheet(
             onDismissRequest = { if (provider.cancellable) setOpen(false) },
-            sheetState = state
+            sheetState = state,
+            containerColor = palettes.card,
         ) {
             Column(
                 verticalArrangement = Arrangement.Center,

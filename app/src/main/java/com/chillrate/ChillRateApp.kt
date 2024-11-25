@@ -8,6 +8,7 @@ import com.chillrate.main.children.live.di.liveModule
 import com.chillrate.main.children.profile.di.profileModule
 import com.chillrate.main.children.room.di.roomModule
 import com.chillrate.main.di.mainModule
+import com.chillrate.remote.api.di.apiModule
 import com.chillrate.remote.callibri.di.callibriModule
 import com.chillrate.splash.di.splashModule
 import org.koin.android.ext.koin.androidContext
@@ -34,6 +35,7 @@ class ChillRateApp : Application() {
                     roomModule,
 
                     // Callibri
+                    apiModule,
                     callibriModule
                 )
             )

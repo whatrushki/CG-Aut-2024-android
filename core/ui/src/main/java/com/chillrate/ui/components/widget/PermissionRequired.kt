@@ -1,10 +1,11 @@
-package com.chillrate.foundation.utils
+package com.chillrate.ui.components.widget
 
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -13,6 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
+import com.chillrate.ui.theme.SHUITheme.palettes
 
 @Composable
 fun PermissionRequired(
@@ -34,6 +36,12 @@ fun PermissionRequired(
 
         if (hasPermission) content()
         else Button(
+            colors = ButtonDefaults.buttonColors(
+                containerColor = palettes.primary,
+                contentColor = palettes.primaryForeground,
+                disabledContentColor = palettes.mutedForeground,
+                disabledContainerColor = palettes.muted
+            ),
             onClick = { launcher.launch(permission) }
         ) { Text("Требуется разрешение $permissionName") }
     }

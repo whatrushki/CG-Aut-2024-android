@@ -17,7 +17,8 @@ import com.chillrate.main.navigation.MainProvider
 import com.chillrate.navigation.bottom_navigation.navItem
 import com.chillrate.navigation.core.NavComponent
 import com.chillrate.navigation.core.Registry
-import com.chillrate.ui.icons.Home2
+import com.chillrate.ui.icons.Donut
+import com.chillrate.ui.icons.Room
 import com.chillrate.ui.icons.User
 import com.chillrate.ui.theme.SHUIIcons
 import org.koin.core.component.KoinComponent
@@ -40,12 +41,12 @@ class MainFeature(
         val navList = listOf(
             navItem(
                 name = "Главная",
-                icon = Home2,
+                icon = SHUIIcons.Donut,
                 provider = LiveProvider
             ),
             navItem(
                 name = "Комната",
-                icon = SHUIIcons.User,
+                icon = SHUIIcons.Room,
                 provider = RoomProvider
             ),
             navItem(

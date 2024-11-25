@@ -40,7 +40,7 @@ fun RowScope.NavigationItem(
     val accentColor = if (selected) palettes.primary else palettes.mutedForeground
 
     NavigationBarItem(
-        modifier = Modifier.size(26.dp),
+        modifier = Modifier.size(32.dp),
         selected = selected,
         onClick = { if (!selected) onClick() },
         label = { Text(text = item.name, color = accentColor) },
