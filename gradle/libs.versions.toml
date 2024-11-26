@@ -1,6 +1,7 @@
 [versions]
 agp = "8.7.2"
 androidxAppcompat = "1.7.0"
+composeCharts = "0.0.18"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -38,10 +39,10 @@ brainllc-signals = { module = "com.github.BrainbitLLC:SignalFilters", version = 
 brainllc-ecg = { module = "com.github.BrainbitLLC:CallibriECG", version = "1.0.0" }
 
 # Proto DataStore
-androidx-appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "androidxAppcompat" }
 androidx-datastore = { group = "androidx.datastore", name = "datastore", version.ref = "protoDataStore" }
 
 # DI
+compose-charts = { module = "io.github.ehsannarmani:compose-charts", version.ref = "composeCharts" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }

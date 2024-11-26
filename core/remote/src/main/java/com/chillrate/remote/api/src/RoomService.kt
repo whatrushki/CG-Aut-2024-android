@@ -9,13 +9,16 @@ import io.ktor.websocket.close
 import kotlinx.serialization.Serializable
 
 class RoomService(
-    private val client: HttpClient
+    private val client: HttpClient,
+    private val authRepository: AuthRepository
 ) {
     private var connection: DefaultClientWebSocketSession? = null
 
-    suspend fun connect() {
-        connection = client.webSocketSession("wss://${API.DOMAIN}/activea") {
-            bearerAuth("")
+    suspend fun connect(roomId: String) {
+        val tokens = authRepository.getTokens() ?: return
+
+        connection = client.webSocketSession("wss://${API.DOMAIN}/ws/room/$roomId") {
+            bearerAuth(tokens.accessToken)
         }
     }
 

@@ -34,7 +34,6 @@ import com.chillrate.ui.theme.SHUIIcons
 import com.chillrate.ui.theme.SHUITheme.spacing
 import com.chillrate.ui.utils.OnKeyboardHiddenListener
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 internal fun RegisterView(
     state: RegisterState,

@@ -43,6 +43,8 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:remote"))
 
+    implementation(libs.compose.charts)
+    implementation(libs.ktor.core)
     implementation(libs.brainllc.neurosdk)
     implementation(libs.bundles.koin)
     implementation(libs.androidx.navigation.compose)

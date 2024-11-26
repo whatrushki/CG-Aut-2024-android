@@ -47,9 +47,12 @@ android {
 }
 
 dependencies {
-    implementation("com.github.BrainbitLLC:neurosdk2:1.0.6.17")
-    implementation("com.github.BrainbitLLC:CallibriECG:1.0.0")
+    implementation(project(":core:foundation"))
 
+    implementation(libs.brainllc.neurosdk)
+    implementation(libs.brainllc.ecg)
+
+    implementation(libs.androidx.datastore)
     implementation(libs.bundles.ktor)
     implementation(libs.koin.core)
 

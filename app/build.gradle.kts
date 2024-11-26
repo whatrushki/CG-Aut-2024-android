@@ -39,8 +39,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.appcompat.v161)
-
     implementation(project(":core:ui"))
     implementation(project(":core:foundation"))
     implementation(project(":core:navigation"))
@@ -49,14 +47,14 @@ dependencies {
     implementation(project(":features:main"))
     implementation(project(":features:auth"))
     implementation(project(":features:splash"))
-    implementation ("io.github.ehsannarmani:compose-charts:0.0.18")
 
+    implementation (libs.compose.charts)
     implementation(libs.bundles.koin)
     implementation(libs.bundles.ktor)
-    implementation(libs.androidx.datastore)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.navigation.compose)
 
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

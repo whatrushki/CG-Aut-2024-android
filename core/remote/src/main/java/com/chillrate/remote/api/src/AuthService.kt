@@ -1,7 +1,10 @@
 package com.chillrate.remote.api.src
 
+import android.util.Log
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
+import io.ktor.client.request.bearerAuth
+import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.http.ContentType
@@ -10,7 +13,8 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 class AuthService(
-    private val client: HttpClient
+    private val client: HttpClient,
+    private val authRepository: AuthRepository
 ) {
     suspend fun signup(
         data: SignUpRequest
@@ -25,7 +29,22 @@ class AuthService(
         contentType(ContentType.Application.Json)
         setBody(data)
     }.body()
+
+    suspend fun profile(): ProfileResponse {
+        val tokens = authRepository.getTokens() ?: throw Exception("Tokens not found")
+
+        return client.get("${API.BASE_URL}/profile") {
+            bearerAuth(tokens.accessToken)
+        }.also {
+            Log.d("d", it.toString())
+        }.body()
+    }
 }
+
+@Serializable
+data class ProfileResponse(
+    val realname: String
+)
 
 @Serializable
 data class SignUpRequest(
@@ -34,7 +53,6 @@ data class SignUpRequest(
     val email: String,
     val password: String
 )
-
 
 @Serializable
 data class LoginRequest(

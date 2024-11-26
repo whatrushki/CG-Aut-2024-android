@@ -2,6 +2,7 @@ package com.chillrate.ui.components.button
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -65,6 +66,7 @@ fun Button(
     contentAlignment = Alignment.Center,
     content = content,
     modifier = Modifier
+        .clickable(enabled = enabled, onClick = onClick)
         .clip(shapes)
         .background(mode.background)
         .applyIf(fill) { fillMaxWidth() }
